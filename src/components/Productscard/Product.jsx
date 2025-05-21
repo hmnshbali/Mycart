@@ -50,7 +50,7 @@ function Product() {
   if (!Array.isArray(filteredProducts) || filteredProducts.length === 0) {
     return <div className="p-4">No products available.</div>;
   }
-
+// check 
   return (
     <>
       <div className="d-flex flex-wrap gap-4 p-4 justify-content-center">
