@@ -21,7 +21,16 @@ function CartPage() {
   }
 
   if (cartData.length === 0) {
-    return <div className="p-4">No products available.</div>;
+    return <div className="d-flex flex-column align-items-center justify-content-center p-4 position-absolute top-50 start-50 translate-middle">
+      <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" className="bi bi-cart-x" viewBox="0 0 16 16">
+        <path d="M7.354 5.646a.5.5 0 1 0-.708.708L7.793 7.5 6.646 8.646a.5.5 0 1 0 .708.708L8.5 8.207l1.146 1.147a.5.5 0 0 0 .708-.708L9.207 7.5l1.147-1.146a.5.5 0 0 0-.708-.708L8.5 6.793 7.354 5.646Z" />
+        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 13h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5ZM3.915 10L3.102 4h11.796l-.864 6H3.915Z" />
+      </svg>
+      <p className="fs-5 mt-3">Your cart is empty!</p>
+       <Link to="/" className="btn btn-primary">
+        Continue Shopping
+      </Link>
+    </div>
   }
 
   const totalPrice = cartData.reduce((total, product) => {

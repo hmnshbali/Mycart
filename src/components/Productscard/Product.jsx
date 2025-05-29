@@ -34,12 +34,8 @@ function Product() {
 });
   if (loading) {
     return (
-      <div className="loading-wave d-flex justify-content-center">
-        <div className="loading-bar"></div>
-        <div className="loading-bar"></div>
-        <div className="loading-bar"></div>
-        <div className="loading-bar"></div>
-      </div>
+
+<div class="loader"></div>
     );
   }
 
@@ -47,17 +43,17 @@ function Product() {
     return <div className="p-4 text-danger">Error: {error}</div>;
   }
 
-  if (!Array.isArray(filteredProducts) || filteredProducts.length === 0) {
-    return <div className="p-4">No products available.</div>;
-  }
+  // if (!Array.isArray(filteredProducts) || filteredProducts.length === 0) {
+  //   return <div className="p-4">No products available.</div>;
+  // }
 
   return (
     <>
       <div className="d-flex flex-wrap gap-4 p-4 justify-content-center">
         {filteredProducts.map((product) => (
-          <div key={product.id} className="product-card">
+            <div key={product.id} className="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 card">
             <a href="#" onClick={() => setSelectedProduct(product)} data-bs-toggle="modal" data-bs-target="#productModal">
-              <img src={product.image} className="product-img" alt="product image" />
+              <img src={product.image} className="product-img pt-3" alt="product image" />
             </a>
             <div className="product-body">
               <div className="product-title">{product.name}</div>
